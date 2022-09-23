@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from random import randint, choice
+from random import randint, choice, sample
 from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)
@@ -50,7 +50,7 @@ def luck():
     return render_template('lucky.html', lnum = num)
 
 #19 02 05 GREETER DEMO
-COMPLIMENTS = ["cool", "clever", "tenacious", "awesome", "Pythonic"]
+COMPLIMENTS = ["cool", "clever", "tenacious", "awesome", "Pythonic", "Cybertronic", "rad", "tubular", "sharp", "clever girl" ]
 
 @app.route('/form')
 def show_form():
@@ -64,3 +64,25 @@ def get_greeting():
 #username in request.args is defined on the form.html "name=""
 #in the return statement, usergreet on left is  variable to be passed to the 
 #next route, usergreet on the right is the variable passed from request.args
+
+@app.route('/form2')
+def show_form_2():
+    return render_template("form2.html")
+
+@app.route('/greet2')    
+def shgr2():
+    username = request.args["username"]
+    #wcom = request.args["wcom"]
+    wcom = request.args.get("wcom")
+    nicety = sample(COMPLIMENTS, 3)
+    return render_template("greet2.html", usergreet=username, wcom=wcom, nicety=nicety)
+    #Notice: wcom above refers to an on/off variable from a checkbox: if it's check, the query
+    #string successfully returns wcom=on, but if it's not checked, you get a bad request key
+    #error,so instead of simply using request.args["wcom"], we use request.args.get["wcom"]. 
+    #Remember, .get is a method, so it's .get() instead of .args[]. All this does is prevent 
+    #the thrown error from wcom not being defined.
+
+@app.route('/spell/<word>')
+def spell_word(word):
+    capw = word.upper()
+    return render_template('sp_w.html', word=capw)

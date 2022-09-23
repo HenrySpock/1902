@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeter Form</title>
+</head>
+<body>
+ 
+    <h3>Greeter Response 2</h3>
+    <h1>Greetings {{usergreet}}!!</h1>
+
+    {% if wcom %}
+        <h2>Buddy, you are so:</h2>
+        <ul>
+            {% for comp in nicety %}
+                <li>{{comp}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2>Yeah, I get tired of people talking all the time too!</h2>
+    {% endif %}
+    <br><br>
+    <a href="/form2">Back to form2.</a>
+    <form action="/form2"> 
+        <button>Submit!</button>
+    </form>   
+    <!-- Either of the above methods works to get back to the form.html page. -->
+
+</body>
+</html> 
