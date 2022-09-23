@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greeter Form</title>
-</head>
-<body>
- 
+{% extends 'base.html' %}
+
+{% block title %}Greet 2{% endblock %}
+
+{% block content %}  
+  
     <h3>Greeter Response 2</h3>
     <h1>Greetings {{usergreet}}!!</h1>
 
@@ -27,6 +23,5 @@
         <button>Submit!</button>
     </form>   
     <!-- Either of the above methods works to get back to the form.html page. -->
-
-</body>
-</html> 
+    
+{% endblock %}

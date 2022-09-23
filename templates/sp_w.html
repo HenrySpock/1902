@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spell Stuff</title>
-</head>
-<body>
-    
+{% extends 'base.html' %}
+
+{% block title %}Spell Word{% endblock %}
+
+{% block content %}  
+     
     <h1>The word is: {{word}} </h1>
     
     {% for char in word %}
     <h2>{{char}}.</h2>
     {% endfor %}
 
-</body>
-</html>
+{% endblock %}

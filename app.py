@@ -38,7 +38,7 @@ def say_bye():
     html = "<html><body><h1>Adios!</h1></body></html>"
     return html
 
-@app.route('/temp_test')  
+@app.route('/eval')  
 def temp(): 
     msg = "This is the temp_test endpoint."
     return render_template("index.html", msg = msg)
@@ -86,3 +86,7 @@ def shgr2():
 def spell_word(word):
     capw = word.upper()
     return render_template('sp_w.html', word=capw)
+
+@app.route('/base')
+def base(): 
+    return render_template("base.html")

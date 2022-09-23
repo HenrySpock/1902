@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <a href="/eval">Index</a>
+        <a href="/lucky">Lucky Num</a>
+        <a href="/form">Greeter Form 1</a>
+        <a href="/form2">Greeter Form 2</a>
+        <a href="/spell/<word>">Spell</a> 
+        <a href="/hello">Hello</a> 
+        <a href="/goodbye">Goodbye</a> 
+    </nav>
+
+    <br>
+        <main id="content">
+            {% block content %}{% endblock %}
+            <br>
+            <footer>
+                PRETEND I AM A FOOTER
+            </footer>
+        </main>
+    <br>
+    
+
+    
+
+</body>
+</html>

@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greeter Form</title>
-</head>
-<body>
- 
+{% extends 'base.html' %}
+
+{% block title %}Lucky{% endblock %}
+
+{% block content %} 
     <p>Youre lucky numbers is: {{lnum}}</p>
     <!-- This conditional is *Jinja*, NOT Python: { % % } implies logic, { { } } implies render-->
     {% if lnum == 3 %}
@@ -17,7 +12,5 @@
         <h2>"Kinda sus."</h2>
         <img src="https://c.tenor.com/9mWE69XonqoAAAAM/darwin.gif">
     {% endif %}
+{% endblock %}
 
-    
-</body>
-</html>
